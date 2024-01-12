@@ -36,6 +36,7 @@ body {
   padding: 5px;
   margin: 5px;
 }
+
 .restaurant-card:hover {
   box-shadow: 1px 8px 20px grey;
   cursor: pointer;
@@ -47,4 +48,27 @@ body {
 .restaurant-container {
   display: flex;
   flex-wrap: wrap;
+}
+.search-container {
+  display: block;
+  border: 1px solid gray;
+  width: fit-content;
+  margin: 10px 0px;
+}
+.search-container > button:hover {
+  cursor: pointer;
+}
+
+.restaurant-card-shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 20px;
+}
+.restaurant-card-shimmer {
+  border: 1px solid #f0f0f0;
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f0f0f0;
 }
