@@ -9,7 +9,9 @@ const Header = () => {
       <img className="logo" alt="logo" src={LOGO_URL}></img>
       <div className="nav-links">
         <ul>
-          <li>Home</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             {/* <Span>Not a right way a tag reload the page</Span>
             <a href="/about">About</a> */}
