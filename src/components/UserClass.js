@@ -11,13 +11,18 @@ class UserClass extends React.Component {
       count2: 1,
     };
     // console.log(props);
-    console.log("Constructor");
+    // console.log("Constructor");
     // First constructor called then render called
+    console.log("Child Constructor");
+  }
+  componentDidMount() {
+    console.log("Child Did Mount");
   }
   render() {
     const { name, location } = this.props;
     const { count, count2 } = this.state;
-    console.log("Render");
+    // console.log("Render");
+    console.log("Child Render");
     return (
       <div className="user-card">
         {/* <h3>Count: {this.state.count}</h3> */}
@@ -53,3 +58,11 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+//O/P
+// Parent Constructor
+// Parent Render
+// Child Constructor
+// Child Render
+// Child Did Mount
+// Parent Did Mount
