@@ -14,7 +14,7 @@ const RestaurantMenu = () => {
       MENU_API + resId + "&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
-    console.log(json.data);
+    // console.log(json.data);
     setResInfo(json.data);
   };
   if (resInfo === null) return <RestaurantCardShimmer />;
@@ -23,7 +23,7 @@ const RestaurantMenu = () => {
     resInfo?.cards[0]?.card?.card?.info;
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  console.log(itemCards);
+  //   console.log(itemCards);
   return (
     <div className="menu-card">
       <h1>{name}</h1>
