@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import RestaurantCardShimmer from "./RestaurantCardShimmer";
 import { restaurantsList } from "../utils/mockData";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //Here we have created the state variable of Restaurants list using mock data
@@ -26,13 +27,13 @@ const Body = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.474679&lng=77.1048978&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4916812&lng=77.094897&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const restaurantsList = await response.json();
-    console.log(
-      restaurantsList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        .restaurants
-    );
+    // console.log(
+    //   restaurantsList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+    //     .restaurants
+    // );
     setListOfRestaurants(
       restaurantsList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         .restaurants
@@ -93,10 +94,12 @@ const Body = () => {
       </button>
       <div className="restaurant-container">
         {filteredList.map((restaurant) => (
-          <RestaurantCard
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
-            restaurantData={restaurant}
-          />
+          >
+            <RestaurantCard restaurantData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
